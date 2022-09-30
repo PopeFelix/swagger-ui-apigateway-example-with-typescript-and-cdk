@@ -1,5 +1,6 @@
 /** @format */
 import * as cdk from 'aws-cdk-lib'
+import { Effect, PolicyStatement } from 'aws-cdk-lib/aws-iam'
 import { Construct } from 'constructs'
 import path from 'path'
 
@@ -32,7 +33,19 @@ export class SwaggerSketchStack extends cdk.Stack {
       }
     )
 
+    swaggerLambda.addToRolePolicy(
+      new PolicyStatement({
+        effect: Effect.ALLOW,
+        actions: ['apigateway:*'],
+        resources: ['*'],
+      })
+    )
+
+    const swaggerIntegration = new cdk.aws_apigateway.LambdaIntegration(
+      swaggerLambda
+    )
     const swagger = api.root.addResource('swagger')
+    swagger.addMethod('GET', swaggerIntegration)
     new cdk.aws_apigateway.ProxyResource(this, 'swaggerProxyResource', {
       parent: swagger,
       anyMethod: true,
@@ -47,9 +60,7 @@ export class SwaggerSketchStack extends cdk.Stack {
         allowOrigins: cdk.aws_apigateway.Cors.ALL_ORIGINS,
         allowMethods: cdk.aws_apigateway.Cors.ALL_METHODS,
       },
-      defaultIntegration: new cdk.aws_apigateway.LambdaIntegration(
-        swaggerLambda
-      ),
+      defaultIntegration: swaggerIntegration,
     })
   }
 }
