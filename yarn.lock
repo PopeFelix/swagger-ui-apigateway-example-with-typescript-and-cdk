@@ -1216,9 +1216,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"aws-cdk-lib@npm:^2.42.1":
-  version: 2.42.1
-  resolution: "aws-cdk-lib@npm:2.42.1"
+"aws-cdk-lib@npm:^2.44.0":
+  version: 2.44.0
+  resolution: "aws-cdk-lib@npm:2.44.0"
   dependencies:
     "@balena/dockerignore": ^1.0.2
     case: 1.6.3
@@ -1231,7 +1231,7 @@ __metadata:
     yaml: 1.10.2
   peerDependencies:
     constructs: ^10.0.0
-  checksum: d0eea4b3797ee20b4c120703e46ab89c2015abfa21a9f8f5552ec02abec8a9bddadbb500281380d51f6333c3b105c5b235a559fc5c0d2e94d7400abca8dc927f
+  checksum: d0a53efe7704271f7436027486f9ec132022b9fb97839f3a5c0832e60955ec4835f1b68e09cdc4a6160dbe4f8b5cab46d7183f3fb6f24c61e878c4cbafa3f0bf
   languageName: node
   linkType: hard
 
@@ -4785,7 +4785,7 @@ __metadata:
     "@types/swagger-ui-express": ^4.1.3
     "@vendia/serverless-express": ^4.10.1
     aws-cdk: ^2.42.1
-    aws-cdk-lib: ^2.42.1
+    aws-cdk-lib: ^2.44.0
     aws-lambda: ^1.0.7
     aws-sdk-client-mock: ^2.0.0
     aws-serverless-swagger-ui: ^1.0.1
