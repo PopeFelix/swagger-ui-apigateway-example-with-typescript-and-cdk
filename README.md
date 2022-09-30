@@ -1,6 +1,6 @@
-# Welcome to your CDK TypeScript project
+# Swagger UI example with AWS CDK, Typescript, API Gateway, and Lambda
 
-This is a blank project for CDK development with TypeScript.
+This demonstrates a simple CDK stack containing an API Gateway API whose documentation is provided by a [Swagger UI](https://swagger.io/tools/swagger-ui/) endpoint (/swagger).
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
